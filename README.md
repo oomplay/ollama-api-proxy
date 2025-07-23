@@ -1,2 +1,2 @@
 # ollama-api-proxy
-ollama-api-proxy by python 
+Wait for upload 
