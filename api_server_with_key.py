@@ -67,7 +67,7 @@ async def create_chat_completion(
     api_key: str = Depends(check_api_key)
 ):
     """
-    รับคำขอ Chat Completion, ส่งต่อไปยัง Ollama, และจัดรูปแบบผลลัพธ์ให้เป็นมาตรฐาน
+    Receive Chat Completion requests, forward them to Ollama, and standardize the results.
     """
     print(f"✅ [Authorized] Received request for model: {request.model}")
     
