@@ -104,7 +104,7 @@ async def create_chat_completion(
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("🚀 Starting Professional-Grade API Server...")
+    print("🚀 Starting API Server...")
     print(f"🔑 Required API Key for 'Authorization: Bearer <key>': {SERVER_API_KEY}")
     print("=" * 60)
     
