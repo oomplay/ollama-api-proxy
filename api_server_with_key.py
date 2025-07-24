@@ -42,7 +42,7 @@ class ChatCompletionResponse(BaseModel):
 bearer_scheme = HTTPBearer()
 
 def check_api_key(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)):
-    """ตรวจสอบ Bearer Token ที่ส่งมากับ Request"""
+    """Check Bearer Token from Request"""
     if credentials.scheme != "Bearer" or credentials.credentials != SERVER_API_KEY:
         raise HTTPException(
             status_code=HTTP_401_UNAUTHORIZED,
