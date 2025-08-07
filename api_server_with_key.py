@@ -33,9 +33,9 @@ class ChatCompletionChoice(BaseModel):
     finish_reason: str = "stop"
 
 class ChatCompletionResponse(BaseModel):
-    id: str = f"chatcmpl-{uuid.uuid4()}"
+    id: str = Field(default_factory=lambda: f"chatcmpl-{uuid.uuid4()}"
     object: str = "chat.completion"
-    created: int = int(time.time())
+    created: int = Field(default_factory=lambda: int(time.time())
     model: str
     choices: List[ChatCompletionChoice]
 
@@ -54,7 +54,7 @@ def check_api_key(credentials: HTTPAuthorizationCredentials = Depends(bearer_sch
 app = FastAPI(
     title="Professional AI Chat API",
     description="An OpenAI-compatible API layer for Ollama",
-    version="2.0.0"
+    version="2.0.1"
 )
 
 @app.post(
@@ -109,7 +109,7 @@ if __name__ == "__main__":
     print("=" * 60)
     
     uvicorn.run(
-        "api_server_with_key:app",
+        "main:app",
         host="127.0.0.1",
         port=8000,
         reload=True
