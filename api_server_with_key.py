@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from starlette.status import HTTP_401_UNAUTHORIZED
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Literal
 load_dotenv()
 
@@ -35,7 +35,7 @@ class ChatCompletionChoice(BaseModel):
 class ChatCompletionResponse(BaseModel):
     id: str = Field(default_factory=lambda: f"chatcmpl-{uuid.uuid4()}")
     object: str = "chat.completion"
-    created: int = Field(default_factory=lambda: int(time.time())
+    created: int = Field(default_factory=lambda: int(time.time()))
     model: str
     choices: List[ChatCompletionChoice]
 
