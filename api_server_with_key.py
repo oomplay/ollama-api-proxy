@@ -33,7 +33,7 @@ class ChatCompletionChoice(BaseModel):
     finish_reason: str = "stop"
 
 class ChatCompletionResponse(BaseModel):
-    id: str = Field(default_factory=lambda: f"chatcmpl-{uuid.uuid4()}"
+    id: str = Field(default_factory=lambda: f"chatcmpl-{uuid.uuid4()}")
     object: str = "chat.completion"
     created: int = Field(default_factory=lambda: int(time.time())
     model: str
