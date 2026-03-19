@@ -13,7 +13,7 @@ from typing import List, Literal
 # โหลดข้อมูลจาก .env
 load_dotenv()
 
-OLLAMA_CHAT_ENDPOINT =  os.getenv("OLLAMA_ENDPOINT",http://127.0.0.1:11434/api/chat)
+OLLAMA_CHAT_ENDPOINT = os.getenv("OLLAMA_ENDPOINT", "http://127.0.0.1:11434/api/chat")
 SERVER_API_KEY = os.getenv("API")
 
 # ตรวจสอบว่า API Key ถูกโหลดจาก .env หรือไม่
